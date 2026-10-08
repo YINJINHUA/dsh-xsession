@@ -1,6 +1,6 @@
 # GitHub → npm 发布 / Publishing
 
-本次为 **0.1.1 正式版**：仓库 `YINJINHUA/dsh-xsession`，Release 标签 `v0.1.1`，不勾选 pre-release，npm 目标 `latest`。准备好文件不代表账号授权或发布已经完成。
+本次为 **0.1.2 正式版**：仓库 `YINJINHUA/dsh-xsession`，Release 标签 `v0.1.2`，不勾选 pre-release，npm 目标 `latest`。准备好文件不代表账号授权或发布已经完成。
 
 源码目录就是 GitHub 仓库根目录。不要上传其父目录、调研、测试会话、宿主提取代码或本机安装包。上传前运行：
 
@@ -17,7 +17,7 @@ npm run check:package
 3. 在 npm 包设置的 Trusted Publisher 中绑定：GitHub 用户 `YINJINHUA`、对应仓库名、工作流文件名 **`publish.yml`**（不是完整路径）；本流程不使用 environment，留空。允许直接 `npm publish`，以及 `npm dist-tag`（已有同字节版本晋升时使用）。保留账号双重认证，无需添加 NPM_TOKEN。
 4. 首次引导人工发布后，后续发布更新版本号再使用自动流程；不要因授权失败反复发布相同版本。可信发布设置需在 npm 要求的有效期内完成首次成功发布。
 
-账号授权、仓库创建、首次 npm 发布仍需实际完成；提交这些文件不会自动建立账号间信任。
+0.1.1 已完成首次 npm 发布。0.1.2 使用上述可信发布流程；保存授权不等于已验证，需核对本次工作流与 npm 的验证状态。
 
 ## 每次发布
 
@@ -46,11 +46,11 @@ After a timeout, check registry visibility before retrying. Existing identical b
 
 Official setup references: [npm trusted publishers](https://docs.npmjs.com/trusted-publishers/), [GitHub release events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#release).
 
-## 0.1.1 首次发布顺序
+## 0.1.2 正式发布顺序
 
-1. GitHub Desktop 添加源码目录，提交后 Publish repository 到 `YINJINHUA/dsh-xsession`，选公开；等 Tests 全绿。
-2. 首次 npm 引导：对核验后的固定包执行 `npm publish /path/to/dsh-xsession-0.1.1.tgz --access public --tag latest --ignore-scripts --registry=https://registry.npmjs.org/`，按提示完成本人双重认证。这里只是命令示例，替换为真实固定包路径；不要把包或认证配置放进源码目录。
-3. 包可见后配置上述 npm Trusted Publisher，再创建正式 Release `v0.1.1`。若工作流重新打包与已发布包一致，它只核验并补附件；若不一致，停止排查，不能覆盖同版本。
-4. 核对 npm `latest` 为 0.1.1，GitHub Release 有 `.tgz` 和 SHA256SUMS.txt。之后的新版本直接由正式 Release 自动发布；预发行仍走 next。
+1. 推送 0.1.2 提交，等待该提交的四项 Tests 全绿。
+2. 从该提交创建正式 Release `v0.1.2`，不勾选 pre-release。
+3. 等待 Publish npm 工作流完成，核对 npm `latest` 为 0.1.2、Release 的 `.tgz` 和 SHA256SUMS.txt，以及 npm Trusted Publisher 的验证状态。
+4. 若失败先核对 registry 与工作流日志，不重复人工发布或覆盖已发布包。
 
-First release: publish the repository, wait for green CI, bootstrap the exact 0.1.1 package on npm with latest and owner verification, configure trusted publishing, then publish GitHub Release v0.1.1. Its workflow verifies identical existing bytes and attaches the package. Any byte mismatch stops the run; never overwrite an npm version.
+Version 0.1.1 bootstrapped the npm package. For 0.1.2, push the release commit, wait for its full CI, then publish a formal v0.1.2 GitHub Release. Verify the automated npm publication, latest tag, identical release assets and trusted-publisher validation. Do not manually publish again while the workflow is running.

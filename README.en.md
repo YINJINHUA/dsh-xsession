@@ -4,7 +4,7 @@
 
 Message conversations inside the same workspace and DSH host. Complements **codex-dsh-project-bridge**, which connects Codex to DSH; this plugin connects DSH coordinators, workers and reviewers.
 
-**Version 0.1.1; stable releases target npm `latest`.** Targets DSH Desktop 0.2.0-rc.2. See [validation scope](docs/VALIDATION.md).
+**Version 0.1.2; stable releases target npm `latest`.** Targets DSH Desktop 0.2.0-rc.2. See [validation scope](docs/VALIDATION.md).
 
 ## Who it is for
 
@@ -14,7 +14,7 @@ The plugin neither changes session permissions nor creates an additional securit
 
 ## Install
 
-Enter `dsh-xsession` (or `dsh-xsession@0.1.1`) in the desktop client's Add Plugin dialog, without an `npm install` command. This requires the version to be published on npm. Before publication, use the maintainer-provided `.tgz`; after release, you can also download it from GitHub Releases and install its file path through the plugin manager.
+Enter `dsh-xsession` (or `dsh-xsession@0.1.2`) in the desktop client's Add Plugin dialog, without an `npm install` command. This requires the version to be published on npm. Before publication, use the maintainer-provided `.tgz`; after release, you can also download it from GitHub Releases and install its file path through the plugin manager.
 
 Use DSH's plugin toggle. No launcher, port configuration or global installation is required. Follow restart instructions when replacing an installed package. Uninstall through the plugin manager.
 

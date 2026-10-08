@@ -4,7 +4,7 @@
 
 让同一工作区、同一 DSH 宿主内的对话互相发信。可与 **codex-dsh-project-bridge** 配套：前者连接 Codex 与 DSH，本插件连接 DSH 内的协调、执行和审查对话。
 
-**版本：0.1.1，正式发布目标为 npm `latest`。** 宿主接口以 DSH Desktop 0.2.0-rc.2 为基准；验证范围见[测试说明](docs/VALIDATION.md)。
+**版本：0.1.2，正式发布目标为 npm `latest`。** 宿主接口以 DSH Desktop 0.2.0-rc.2 为基准；验证范围见[测试说明](docs/VALIDATION.md)。
 
 ## 适合谁
 
@@ -14,7 +14,7 @@
 
 ## 安装
 
-在 DSH 桌面客户端「添加插件」填入 `dsh-xsession`（指定版本可填 `dsh-xsession@0.1.1`），不需要输入 `npm install` 命令。此方式需该版本已在 npm 发布；如果尚未发布，请使用维护者提供的 `.tgz`。也可以从 GitHub Release 下载 `.tgz`，将文件路径交给插件管理器安装。
+在 DSH 桌面客户端「添加插件」填入 `dsh-xsession`（指定版本可填 `dsh-xsession@0.1.2`），不需要输入 `npm install` 命令。此方式需该版本已在 npm 发布；如果尚未发布，请使用维护者提供的 `.tgz`。也可以从 GitHub Release 下载 `.tgz`，将文件路径交给插件管理器安装。
 
 用 DSH 内的插件开关启用／停用；不需要启动脚本、端口配置或全局安装。更新已安装的包时，按客户端提示重启。卸载使用插件管理器，不手动删除正在使用的目录。
 

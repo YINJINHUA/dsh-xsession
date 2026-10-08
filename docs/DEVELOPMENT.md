@@ -13,7 +13,7 @@ The initial scope is messaging. Shared boards, creation, offline resume and cros
 1. Mac 和 Windows 最终源码快照测试通过；完成桌面安装及实际协作验收，或明确标为预览。
 2. 确认 npm 包名可用和 GitHub 仓库名；已选名称为 `dsh-xsession`，首次发布前仍须核查 registry 与仓库归属。
 3. 核版本、README 状态、MIT 许可和 `npm run check:package`；不要上传上级目录的调研、宿主提取件、日志、会话或机器路径。
-4. 用 `npm pack --ignore-scripts` 只打包一次，记录 SHA256，将同一文件用于测试、npm 发布和 Release 附件。预览发 `next`，正式版发 `latest`；0.1.1 已选择正式发布。首次公开发布需要所有者授权。
+4. 用 `npm pack --ignore-scripts` 只打包一次，记录 SHA256，将同一文件用于测试、npm 发布和 Release 附件。预览发 `next`，正式版发 `latest`；0.1.2 已选择正式发布。首次公开发布需要所有者授权。
 5. 后续可配置 GitHub OIDC；本仓库已准备 Release 发布工作流，普通 push 不发布；账号配置见 [发布说明](RELEASING.md)。
 
 Before release, validate the final snapshot on both platforms, explicitly state desktop test coverage, confirm package/repository names, inspect pack contents and reuse identical tarball bytes. Preview releases use `next`; stable publication requires an explicit decision. Release-triggered publishing is prepared; see [setup](RELEASING.md). Push does not publish, and no account credentials are included.

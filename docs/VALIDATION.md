@@ -1,8 +1,8 @@
 # 验证状态 / Validation
 
-当前源码版本为 0.1.1：新增输入修复、权限快照和发布规则。Mac 本地回归与宿主隔离联调通过；尚未安装 0.1.1 到 Desktop，未声称本版 Windows 原生或实机复测通过。以下 alpha.2 是上一固定包的独立实机证据，不能替代新版验收。
+当前源码版本为 0.1.2，仅更新版本与发布文档，运行代码与 0.1.1 相同。0.1.1 的 GitHub Actions 四项矩阵（Linux Node 22/24、macOS Node 24、Windows Node 24）已通过。0.1.2 发布要求自身提交的同一矩阵通过；未重新安装本版到 Desktop 或重做实机测试。
 
-Current source version is 0.1.1. Local Mac regression and isolated host integration pass. Version 0.1.1 Desktop installation and Windows/native live retesting have not been performed. The alpha.2 evidence below applies only to that previous immutable package.
+Version 0.1.2 updates version metadata and release documentation only; runtime code is unchanged from 0.1.1. All four hosted CI jobs passed for 0.1.1. Publication of 0.1.2 requires green checks on its own commit. Desktop installation and live-device tests have not been repeated for this version. The alpha.2 evidence below remains historical.
 
 **0.1.0-alpha.2：Mac 和 Windows 默认权限双会话实机通过（2026-10-08）。尚未发布 npm。**
 
@@ -12,7 +12,7 @@ alpha.1 的隔离测试未覆盖 V4 持久化准入，漏掉了旧来源包装�
 
 Alpha.1 isolated tests missed rejection of the retired source wrapper by V4 durable admission. Alpha.2 fixes producer attribution and adds positive/negative tests against the official V4 admission code. Live acceptance additionally checks actual model processing, durable messages and report writes rather than treating enqueue acceptance as delivery.
 
-## 本轮结果 / Results
+## alpha.2 历史结果 / Historical alpha.2 results
 
 | 验证项目 / Check | Mac | Windows |
 | --- | --- | --- |
