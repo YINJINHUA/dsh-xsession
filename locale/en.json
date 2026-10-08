@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DSH Workspace Conversation Bridge",
+    "description": "Same-workspace messaging for DSH workers and reviewers using workspace-write or read-only permissions. No elevation or external CLI needed to message peers. Complements codex-dsh-project-bridge. Receivers must check authorization; waking agents may incur model costs."
+  }
+}

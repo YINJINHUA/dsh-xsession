@@ -1,0 +1,46 @@
+{
+  "name": "dsh-xsession",
+  "version": "0.1.1",
+  "description": "Same-workspace DSH messaging for least-privilege collaboration, without elevating session permissions.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./src/plugin.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "src",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "docs",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check:package": "node scripts/check-package.js",
+    "check:release": "node scripts/check-release.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YINJINHUA/dsh-xsession.git"
+  },
+  "homepage": "https://github.com/YINJINHUA/dsh-xsession#readme",
+  "bugs": {
+    "url": "https://github.com/YINJINHUA/dsh-xsession/issues"
+  }
+}
